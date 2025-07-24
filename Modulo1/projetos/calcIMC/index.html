@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <main
+      class="w-full h-screen flex items-center bg-linear-to-b from-black to-green-600"
+    >
+      <div class="w-1/2 h-full">
+        <div class="flex items-center justify-center h-full w-full">
+          <img src="./public/coach-animate.svg" class="h-[80%]" alt="coach" />
+        </div>
+      </div>
+      <div class="w-1/2 h-full p-10 flex items-center justify-center">
+        <div
+          class="flex items-center justify-center w-full h-fit bg-zinc-800 flex-col text-white p-10 rounded-md"
+        >
+          <form id="formIMC" action="" class="w-full h-full flex flex-col">
+            <h2 class="font-bold text-5xl text-center mb-10">
+              Calculadora - IMC
+            </h2>
+            <label for="peso" class="font-bold mb-3">Peso em Kg</label>
+            <input
+              class="bg-zinc-600 p-5 mb-3"
+              type="text"
+              name="peso"
+              id="peso"
+            />
+            <label for="altura" class="font-bold mb-3">Altura em metros</label>
+            <input
+              class="bg-zinc-600 p-5"
+              type="text"
+              name="altura"
+              id="altura"
+            />
+            <button
+              class="bg-green-500 p-5 rounded-md font-bold my-10 hover:bg-transparent hover:cursor-pointer hover:border hover:border-green-500 transition-all"
+            >
+              CALCULAR
+            </button>
+            <hr class="text-zinc-600" />
+          </form>
+          <div
+            class="flex items-center p-5 hidden w-full h-full"
+            id="imc"
+          ></div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="./app.js"></script>
+</html>
