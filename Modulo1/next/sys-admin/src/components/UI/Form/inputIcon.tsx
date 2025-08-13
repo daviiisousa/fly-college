@@ -1,12 +1,12 @@
 import { Input } from "./input";
 
-type iconInputProps = {
+type IconInputProps = {
   Icon: React.ElementType;
   label: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 // Componente para inputs com ícones
-export function IconInput({ Icon, label, ...inputProps }: iconInputProps) {
+export function IconInput({ Icon, label, ...inputProps }: IconInputProps) {
   return (
     <>
       <label htmlFor={inputProps.id} className="mb-2 font-bold">
