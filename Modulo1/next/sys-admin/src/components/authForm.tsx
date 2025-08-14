@@ -8,6 +8,7 @@ import { MdEmail } from "react-icons/md";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { IconInput } from "./UI/Form/inputIcon";
 import { SocialButtons } from "./socialButton";
+import { bgHoverGradient, textGradient } from "@/utils/util";
 
 type AuthFormProps = {
   type?: "login" | "register";
@@ -38,7 +39,7 @@ export function AuthForm({
       submitText: "Criar Conta",
       dividerText: "OU",
       footerText: "Já possui uma conta?",
-      footerLink: "./",
+      footerLink: "./login",
       footerLinkText: "Entre",
     },
   };
@@ -48,7 +49,7 @@ export function AuthForm({
   return (
     <Form className={className} onSubmit={formProps.onSubmit}>
       {/* Header */}
-      <h1 className="text-3xl bg-linear-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent font-bold text-center">
+      <h1 className={`text-3xl ${textGradient} text-center font-bold`}>
         {currentConfig.title}
       </h1>
       <p className="text-gray-400 text-center">{currentConfig.subtitle}</p>
@@ -113,7 +114,7 @@ export function AuthForm({
           </label>
           <Link
             href="/forgot-password"
-            className="bg-linear-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent hover:from-blue-900 hover:to-purple-900 transition-all"
+            className={`${textGradient} hover:from-blue-900 hover:to-purple-900 transition-all`}
           >
             Esqueceu a senha?
           </Link>
@@ -143,7 +144,7 @@ export function AuthForm({
         {currentConfig.footerText}{" "}
         <Link
           href={currentConfig.footerLink}
-          className="bg-linear-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent hover:from-blue-900 hover:to-purple-900 transition-all my-5"
+          className={` ${textGradient} hover:from-blue-900 hover:to-purple-900 transition-all my-5`}
         >
           {currentConfig.footerLinkText}
         </Link>
