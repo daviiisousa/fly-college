@@ -8,7 +8,7 @@ import { MdEmail } from "react-icons/md";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { IconInput } from "./UI/Form/inputIcon";
 import { SocialButtons } from "./socialButton";
-import { bgHoverGradient, textGradient } from "@/utils/util";
+import { textGradient } from "@/utils/util";
 
 type AuthFormProps = {
   type?: "login" | "register";
@@ -124,7 +124,8 @@ export function AuthForm({
       {/* Botão Submit */}
       <Button
         type="submit"
-        className="bg-linear-to-r from-blue-500 to-purple-400 hover:shadow-primary hover:shadow-blue-500 transition-all"
+        theme="gradient"
+        className="hover:shadow-primary hover:shadow-blue-500 transition-all"
       >
         {currentConfig.submitText}
       </Button>

@@ -1,12 +1,14 @@
-import { Header } from "@/components/layout/header";
+import { Banner } from "@/components/banner";
+import { Category } from "@/components/category";
+import PageWrapper from "@/components/layout/pageWraper";
+import { ProductCard } from "@/components/productCard";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <div className="container mx-auto">
-        <h1>ola mundo</h1>
-      </div>
-    </>
+    <PageWrapper>
+      <Banner />
+      <Category />
+      <ProductCard />
+    </PageWrapper>
   );
 }
