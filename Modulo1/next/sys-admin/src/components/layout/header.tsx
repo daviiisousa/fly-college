@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export function Header() {
   return (
-    <header className="w-full h-[50px] py-8 px-5 bg-slate-950 text-white border-b fixed border-gray-700 z-10">
+    <header className="w-full h-[50px] py-8 px-5 bg-slate-950 text-white border-b fixed border-gray-700 z-50">
       <div className="flex items-center justify-between h-full ">
         <Image src={logo.src} width={200} height={100} alt="logo" />
         <div className="w-[30%]">

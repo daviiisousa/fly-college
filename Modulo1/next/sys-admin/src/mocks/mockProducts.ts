@@ -10,6 +10,7 @@ export const productsMocks = [
     reviews: 1250,
     category: "Smartphones",
     isNew: true,
+    discount: 10,
   },
   {
     id: "2",
