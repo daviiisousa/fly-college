@@ -14,7 +14,7 @@ export function Banner() {
       </p>
       <Button
         theme="info"
-        className="!w-[20%] flex items-center justify-center gap-3 max-md:!w-full"
+        className="!w-fit px-5  flex items-center justify-center gap-3 max-md:!w-full"
       >
         Ver Ofertas
         <FaArrowRight />

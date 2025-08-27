@@ -34,6 +34,8 @@ export const productsMocks = [
     rating: 4.7,
     reviews: 567,
     category: "Fones",
+    discount: 20,
+    isNew: true,
   },
   {
     id: "4",

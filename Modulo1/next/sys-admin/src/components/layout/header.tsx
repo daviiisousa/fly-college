@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export function Header() {
   return (
-    <header className="w-full h-[50px] py-8 px-5 bg-slate-950 text-white border-b fixed border-gray-700 z-50">
+    <header className="w-full h-[50px] py-9 px-5 bg-slate-950/70 text-white border-b fixed border-gray-700 backdrop-blur-md z-20">
       <div className="flex items-center justify-between h-full ">
         <Image src={logo.src} width={200} height={100} alt="logo" />
         <div className="w-[30%]">
@@ -23,7 +23,12 @@ export function Header() {
           />
         </div>
         <div className=" gap-5 items-center md:flex hidden">
-          <Button className="hover:!bg-blue-500 !my-0">Categorias</Button>
+          <Button
+            theme="ghost"
+            className="hover:!bg-blue-500 !my-0 transition-all"
+          >
+            Categorias
+          </Button>
           <HiOutlineShoppingCart
             className={"hover:bg-blue-500 px-2 rounded-md"}
             size={49}

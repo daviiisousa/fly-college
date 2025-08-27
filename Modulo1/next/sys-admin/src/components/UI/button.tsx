@@ -10,7 +10,8 @@ type ButtonProps = {
     | "success"
     | "warning"
     | "info"
-    | "gradient";
+    | "gradient"
+    | "ghost";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button({ children, className, theme, ...props }: ButtonProps) {
@@ -30,6 +31,8 @@ export function Button({ children, className, theme, ...props }: ButtonProps) {
         return "bg-gray-900 text-white hover:bg-transparent hover:ring";
       case "gradient":
         return "bg-linear-to-r from-blue-500 to-purple-400";
+      case "ghost":
+        return "bg-transparent";
       default:
         return "bg-gray-500 text-white hover:bg-gray-600";
     }
