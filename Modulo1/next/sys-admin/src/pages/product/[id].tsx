@@ -8,15 +8,16 @@ import { useEffect, useState } from "react";
 export default function ProductPage() {
   const route = useRouter();
   const { id } = route.query;
-  const [product, setProduct] = useState<ProductDetails | null>(
-    {} as ProductDetails
-  );
+  const [product, setProduct] = useState<ProductDetails>({} as ProductDetails);
 
   useEffect(() => {
     function fetchProduct() {
-      const response = getProductMock({ id: Number(id) });
-      if (response) setProduct(response);
+      if (id) {
+        const response = getProductMock({ id: Number(id) });
+        if (response) setProduct(response);
+      }
     }
+
     fetchProduct();
   }, [id]);
 
@@ -24,8 +25,8 @@ export default function ProductPage() {
     <PageWrapper>
       <Breadcrumb
         items={[
-          { title: "Home" },
-          { title: "Products" },
+          { title: product?.category },
+          { title: product?.name },
           { title: "Product Details" },
         ]}
       />
