@@ -1,4 +1,4 @@
-import { Button } from "../UI/button";
+import { Button } from "../UI/buttons/button";
 import { IconInput } from "../UI/Form/inputIcon";
 import { IoSearchSharp } from "react-icons/io5";
 import { HiOutlineShoppingCart } from "react-icons/hi";
@@ -7,12 +7,15 @@ import { IoIosMenu } from "react-icons/io";
 
 import logo from "../../../public/logoEcommerce.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Header() {
   return (
     <header className="w-full h-[50px] py-9 px-5 bg-slate-950/70 text-white border-b fixed border-gray-700 backdrop-blur-md z-20">
       <div className="flex items-center justify-between h-full ">
-        <Image priority src={logo.src} width={200} height={100} alt="logo" />
+        <Link href="/">
+          <Image priority src={logo.src} width={200} height={100} alt="logo" />
+        </Link>
         <div className="w-[30%]">
           <IconInput
             className="!mb-0"

@@ -1,5 +1,5 @@
 import { FaChevronLeft } from "react-icons/fa6";
-import { Button } from "./UI/button";
+import { Button } from "../UI/buttons/button";
 
 interface BreadcrumbProps {
   items: {

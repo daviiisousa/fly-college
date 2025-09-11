@@ -1,5 +1,5 @@
-import { Button } from "./UI/button";
-import { Input } from "./UI/Form/input";
+import { Button } from "../UI/buttons/button";
+import { Input } from "../UI/Form/input";
 
 export function NewsLetterSection() {
   return (

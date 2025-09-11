@@ -1,13 +1,12 @@
-// components/AuthForm.jsx
-import { Button } from "@/components/UI/button";
+import { Button } from "@/components/UI/buttons/button";
 import { Form } from "@/components/UI/Form/form";
 import Link from "next/link";
 import React from "react";
 import { GiPadlock } from "react-icons/gi";
 import { MdEmail } from "react-icons/md";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
-import { IconInput } from "./UI/Form/inputIcon";
-import { SocialButtons } from "./socialButton";
+import { IconInput } from "../UI/Form/inputIcon";
+import { SocialButtons } from "../UI/buttons/socialButton";
 import { textGradient } from "@/utils/util";
 
 type AuthFormProps = {
@@ -20,6 +19,7 @@ export function AuthForm({
   className = "min-w-96 my-5",
   ...formProps
 }: AuthFormProps) {
+  // isso verifica se o tipo é login ou registro
   const isLogin = type === "login";
   const isRegister = type === "register";
 
@@ -44,17 +44,15 @@ export function AuthForm({
     },
   };
 
+  // seleciona a configuração atual com base no tipo
   const currentConfig = config[type];
 
   return (
     <Form className={className} onSubmit={formProps.onSubmit}>
-      {/* Header */}
       <h1 className={`text-3xl ${textGradient} text-center font-bold`}>
         {currentConfig.title}
       </h1>
       <p className="text-gray-400 text-center">{currentConfig.subtitle}</p>
-
-      {/* Campo Nome (apenas no registro) */}
       {isRegister && (
         <IconInput
           Icon={MdOutlineDriveFileRenameOutline}
@@ -66,8 +64,6 @@ export function AuthForm({
           placeholder="Jonh Doe"
         />
       )}
-
-      {/* Campo Email */}
       <IconInput
         Icon={MdEmail}
         label="Email"
@@ -77,8 +73,6 @@ export function AuthForm({
         id="email"
         placeholder="seu@email.com"
       />
-
-      {/* Campo Senha */}
       <IconInput
         Icon={GiPadlock}
         label="Senha"
@@ -88,8 +82,6 @@ export function AuthForm({
         id="senha"
         placeholder="######"
       />
-
-      {/* Campo Confirmar Senha (apenas no registro) */}
       {isRegister && (
         <IconInput
           Icon={GiPadlock}
@@ -101,8 +93,6 @@ export function AuthForm({
           placeholder="######"
         />
       )}
-
-      {/* Opções extras do login */}
       {isLogin && (
         <div className="flex items-center justify-between">
           <label
@@ -120,8 +110,6 @@ export function AuthForm({
           </Link>
         </div>
       )}
-
-      {/* Botão Submit */}
       <Button
         type="submit"
         theme="gradient"
@@ -129,18 +117,14 @@ export function AuthForm({
       >
         {currentConfig.submitText}
       </Button>
-
-      {/* Divisor */}
       <div className="grid grid-cols-3 items-center my-3">
         <hr className="text-zinc-500" />
         <p className="text-center text-zinc-500">{currentConfig.dividerText}</p>
         <hr className="text-zinc-500" />
       </div>
 
-      {/* Botões Sociais */}
       <SocialButtons isLogin={isLogin} />
 
-      {/* Footer */}
       <p className="text-center text-zinc-500">
         {currentConfig.footerText}{" "}
         <Link

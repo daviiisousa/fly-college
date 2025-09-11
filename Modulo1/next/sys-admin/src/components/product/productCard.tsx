@@ -1,5 +1,5 @@
 import { Product } from "@/interfaces/product";
-import { Button } from "../UI/button";
+import { Button } from "../UI/buttons/button";
 import { CiHeart } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaStar } from "react-icons/fa6";
