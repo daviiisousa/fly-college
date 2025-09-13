@@ -1,6 +1,7 @@
 import { Breadcrumb } from "@/components/breadCrumb";
 import PageWrapper from "@/components/layout/pageWraper";
 import { ProductImages } from "@/components/product/productImages";
+import { ProductInfo } from "@/components/product/productInfo";
 import { ProductSkeleton } from "@/components/skeletons/productSkeletons";
 import { getProductMock } from "@/helpers/getProductMock";
 import { ProductDetails } from "@/interfaces/productDeatails";
@@ -42,6 +43,7 @@ export default function ProductPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <ProductImages images={product?.images} />
+            <ProductInfo product={product} />
           </div>
         </>
       )}

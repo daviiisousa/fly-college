@@ -1,11 +1,11 @@
-import { bgGradient } from "@/utils/util";
+import { gradient } from "@/helpers/gradientsColor";
 import { Button } from "../UI/buttons/button";
 import { FaArrowRight } from "react-icons/fa6";
 
 export function Banner() {
   return (
     <div
-      className={`w-full p-10 mt-[70px] rounded-2xl ${bgGradient} space-y-5 my-5 text-white`}
+      className={`w-full p-10 mt-[70px] rounded-2xl ${gradient.bgGradient} space-y-5 my-5 text-white`}
     >
       <h2 className="font-bold text-3xl">Ofertas Especiais</h2>
       <p className="text-[18px]">

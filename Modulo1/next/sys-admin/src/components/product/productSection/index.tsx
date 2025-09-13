@@ -1,7 +1,7 @@
 import { Product } from "@/interfaces/product";
 import { productsMocks } from "@/mocks/mockProducts";
 import { useEffect, useState } from "react";
-import { ProductCard } from "./productCard";
+import { ProductCard } from "../productCard";
 
 export function ProductSection() {
   const [product, setProduct] = useState<Product[] | null>(null);

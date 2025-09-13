@@ -1,5 +1,5 @@
 import { Button } from "../UI/buttons/button";
-import { IconInput } from "../UI/Form/inputIcon";
+import { IconInput } from "../UI/inputs/inputIcons";
 import { IoSearchSharp } from "react-icons/io5";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { FaRegUser } from "react-icons/fa";

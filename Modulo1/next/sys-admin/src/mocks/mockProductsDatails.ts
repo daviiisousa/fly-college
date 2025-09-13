@@ -10,6 +10,7 @@ export const productsDetailsMocks = [
       "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=600&h=600&fit=crop",
     ],
     rating: 4.8,
+    discount: 10,
     reviews: 1250,
     category: "Smartphones",
     isNew: true,

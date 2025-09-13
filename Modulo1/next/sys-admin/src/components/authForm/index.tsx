@@ -1,13 +1,13 @@
 import { Button } from "@/components/UI/buttons/button";
-import { Form } from "@/components/UI/Form/form";
+import { Form } from "@/components/UI/form";
 import Link from "next/link";
 import React from "react";
 import { GiPadlock } from "react-icons/gi";
 import { MdEmail } from "react-icons/md";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
-import { IconInput } from "../UI/Form/inputIcon";
+import { IconInput } from "../UI/inputs/inputIcons";
 import { SocialButtons } from "../UI/buttons/socialButton";
-import { textGradient } from "@/utils/util";
+import { gradient } from "@/helpers/gradientsColor";
 
 type AuthFormProps = {
   type?: "login" | "register";
@@ -49,7 +49,7 @@ export function AuthForm({
 
   return (
     <Form className={className} onSubmit={formProps.onSubmit}>
-      <h1 className={`text-3xl ${textGradient} text-center font-bold`}>
+      <h1 className={`text-3xl ${gradient.textGradient} text-center font-bold`}>
         {currentConfig.title}
       </h1>
       <p className="text-gray-400 text-center">{currentConfig.subtitle}</p>
@@ -104,7 +104,7 @@ export function AuthForm({
           </label>
           <Link
             href="/forgot-password"
-            className={`${textGradient} hover:from-blue-900 hover:to-purple-900 transition-all`}
+            className={`${gradient.textGradient} hover:from-blue-900 hover:to-purple-900 transition-all`}
           >
             Esqueceu a senha?
           </Link>
@@ -129,7 +129,7 @@ export function AuthForm({
         {currentConfig.footerText}{" "}
         <Link
           href={currentConfig.footerLink}
-          className={` ${textGradient} hover:from-blue-900 hover:to-purple-900 transition-all my-5`}
+          className={` ${gradient.textGradient} hover:from-blue-900 hover:to-purple-900 transition-all my-5`}
         >
           {currentConfig.footerLinkText}
         </Link>

@@ -1,7 +1,7 @@
 import type { Category } from "@/interfaces/category";
 import { categoriesMocks } from "@/mocks/mockCategories";
 import { useEffect, useState } from "react";
-import { CategoryCard } from "./categoryCard";
+import { CategoryCard } from "../categoryCard";
 
 export function Category() {
   const [categories, setCategories] = useState<Category[]>([]);
