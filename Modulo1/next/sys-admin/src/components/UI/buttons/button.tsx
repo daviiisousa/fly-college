@@ -32,7 +32,7 @@ export function Button({ children, className, theme, ...props }: ButtonProps) {
       case "gradient":
         return "bg-linear-to-r from-blue-500 to-purple-400";
       case "ghost":
-        return "bg-transparent";
+        return "bg-transparent hover:bg-gray-600";
       default:
         return "bg-gray-500 text-white hover:bg-gray-600";
     }

@@ -1,9 +1,13 @@
-interface BadgesProps {
+import clsx from "clsx";
+import React from "react";
+
+type BadgesProps = {
   text?: string;
   variant?: "Novo" | "discount" | "category";
-}
+  className?: string;
+} & React.HTMLAttributes<HTMLSpanElement>;
 
-export function Badges({ text, variant }: BadgesProps) {
+export function Badges({ text, variant, className }: BadgesProps) {
   function getVariant() {
     switch (variant) {
       case "Novo":
@@ -16,5 +20,5 @@ export function Badges({ text, variant }: BadgesProps) {
         return "bg-gray-500 text-white text-xs font-semibold px-2 py-1 rounded";
     }
   }
-  return <span className={getVariant()}>{text}</span>;
+  return <span className={clsx(className, getVariant())}>{text}</span>;
 }

@@ -4,12 +4,14 @@ import { StarRating } from "../../StarsRating";
 import { formatCurrency } from "@/helpers/formatCurrency";
 import { Button } from "@/components/UI/buttons/button";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import React from "react";
 
 interface ProductInfoProps {
   product: ProductDetails;
 }
 
 export function ProductInfo({ product }: ProductInfoProps) {
+  const [quantidade, setQuantidade] = React.useState(1);
   return (
     <div className="space-y-5 text-white">
       <div>
@@ -50,12 +52,23 @@ export function ProductInfo({ product }: ProductInfoProps) {
           <label htmlFor="quantidade" className="text-sm font-medium">
             Quantidade:
           </label>
-          <div className="flex items-center border border-black/70 rounded-md">
-            <Button theme="ghost" className="p-0 ">
+          <div className="flex items-center border h-[20px] py-3 px-2 rounded-2xl border-black/70">
+            <Button
+              onClick={() => setQuantidade((prev) => Math.max(prev - 1, 1))}
+              theme="ghost"
+              className={`h-px flex items-center ${
+                quantidade <= 1 ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              disabled={quantidade <= 1}
+            >
               <FiMinus />
             </Button>
-            <span className="px-4 py-2 text-sm font-medium">1</span>
-            <Button theme="ghost" className="p-0 ">
+            <span className="px-4 py-2 text-sm font-medium">{quantidade}</span>
+            <Button
+              onClick={() => setQuantidade((prev) => prev + 1)}
+              theme="ghost"
+              className="h-px flex items-center"
+            >
               <FiPlus />
             </Button>
           </div>
