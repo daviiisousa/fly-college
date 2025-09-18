@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 
 type ButtonProps = {
@@ -41,7 +42,11 @@ export function Button({ children, className, theme, ...props }: ButtonProps) {
   return (
     <button
       {...props}
-      className={`rounded-md w-full py-3 font-medium my-5 hover:cursor-pointer ${className} ${getButtonTheme()}`}
+      className={clsx(
+        "rounded-md w-full py-3 font-medium my-5 hover:cursor-pointer",
+        className,
+        getButtonTheme()
+      )}
     >
       {children}
     </button>

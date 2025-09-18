@@ -1,17 +1,25 @@
 import { ProductDetails } from "@/interfaces/productDeatails";
 import { Badges } from "../../UI/badges";
-import { StarRating } from "../../StarsRating";
+import { StarRating } from "../../UI/StarsRating";
 import { formatCurrency } from "@/helpers/formatCurrency";
 import { Button } from "@/components/UI/buttons/button";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import React from "react";
+import { FaHeart, FaShare, FaShop } from "react-icons/fa6";
+import { BsTruck } from "react-icons/bs";
+import { MdOutlineShield } from "react-icons/md";
 
 interface ProductInfoProps {
   product: ProductDetails;
 }
 
 export function ProductInfo({ product }: ProductInfoProps) {
-  const [quantidade, setQuantidade] = React.useState(1);
+  const [quantity, setQuantity] = React.useState(1);
+
+  const shippingInfos = [
+    { value: product?.shipping, color: "green", icon: <BsTruck /> },
+    { value: product?.warranty, color: "blue", icon: <MdOutlineShield /> },
+  ];
   return (
     <div className="space-y-5 text-white">
       <div>
@@ -52,26 +60,61 @@ export function ProductInfo({ product }: ProductInfoProps) {
           <label htmlFor="quantidade" className="text-sm font-medium">
             Quantidade:
           </label>
-          <div className="flex items-center border h-[20px] py-3 px-2 rounded-2xl border-black/70">
+          <div className="flex items-center border h-[20px] py-3 px-2 rounded-2xl border-gray-500">
             <Button
-              onClick={() => setQuantidade((prev) => Math.max(prev - 1, 1))}
+              onClick={() => setQuantity((prev) => Math.max(prev - 1, 1))}
               theme="ghost"
               className={`h-px flex items-center ${
-                quantidade <= 1 ? "opacity-50 cursor-not-allowed" : ""
+                quantity <= 1 ? "opacity-50 cursor-not-allowed" : ""
               }`}
-              disabled={quantidade <= 1}
+              disabled={quantity <= 1}
             >
               <FiMinus />
             </Button>
-            <span className="px-4 py-2 text-sm font-medium">{quantidade}</span>
+            <span className="px-4 py-2 text-sm font-medium">{quantity}</span>
             <Button
-              onClick={() => setQuantidade((prev) => prev + 1)}
+              onClick={() => setQuantity((prev) => prev + 1)}
               theme="ghost"
               className="h-px flex items-center"
             >
               <FiPlus />
             </Button>
           </div>
+        </div>
+        <div className="flex flex-col">
+          <div className="flex items-center gap-4">
+            <Button
+              className="flex-1 flex items-center justify-center gap-5 font-bold"
+              theme="primary"
+            >
+              <FaShop />
+              Adicionar ao carrinho
+            </Button>
+            <div className="border border-slate-900 p-5 rounded-md hover:bg-gray-800 cursor-pointer">
+              <FaHeart size={20} />
+            </div>
+            <div className="border border-slate-900 p-5 rounded-md hover:bg-gray-800 cursor-pointer">
+              <FaShare />
+            </div>
+          </div>
+          <Button className="!m-0">Comprar Agora</Button>
+        </div>
+        <div className="flex flex-col gap-2 border-t pt-4 border-gray-800">
+          {shippingInfos.map((info, index) => {
+            return (
+              <div className="flex items-center gap-3 text-sm" key={index}>
+                <span
+                  className={`
+                ${info.color === "green" && "text-green-500"}
+                ${info.color === "blue" && "text-blue-500"}
+                `}
+                >
+                  {info.icon}
+                </span>
+                <span>{info.value}</span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

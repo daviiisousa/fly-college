@@ -1,5 +1,6 @@
 import { FaChevronLeft } from "react-icons/fa6";
 import { Button } from "../UI/buttons/button";
+import { useRouter } from "next/router";
 
 interface BreadcrumbProps {
   items: {
@@ -7,9 +8,11 @@ interface BreadcrumbProps {
   }[];
 }
 export function Breadcrumb({ items }: BreadcrumbProps) {
+  const router = useRouter();
   return (
     <div className="flex items-center gap-5 mb-6 mt-20">
       <Button
+        onClick={() => router.back()}
         theme="ghost"
         className="self-start flex gap-2 items-center !w-fit hover:bg-blue-500 transition-all px-2"
       >
