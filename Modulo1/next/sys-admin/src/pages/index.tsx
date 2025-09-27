@@ -1,16 +1,19 @@
 import { Banner } from "@/components/banner";
 import { Category } from "@/components/category/categorySection";
-import PageWrapper from "@/components/layout/pageWraper";
 import { NewsLetterSection } from "@/components/newsLetterSection";
 import { ProductSection } from "@/components/product/productSection";
+import { PageWrapper } from "../components/layout/pageWraper";
 
 export default function Home() {
   return (
-    <PageWrapper>
-      <Banner />
-      <Category />
-      <ProductSection />
-      <NewsLetterSection />
-    </PageWrapper>
+    <PageWrapper.Root>
+      <PageWrapper.Header />
+      <PageWrapper.Content>
+        <Banner />
+        <Category />
+        <ProductSection />
+        <NewsLetterSection />
+      </PageWrapper.Content>
+    </PageWrapper.Root>
   );
 }
