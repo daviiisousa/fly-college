@@ -1,5 +1,5 @@
 import { Category } from "@/interfaces/category";
-import { SiKingstontechnology } from "react-icons/si";
+import { VscExtensions } from "react-icons/vsc";
 
 interface CategoryProps {
   category: Category;
@@ -8,17 +8,23 @@ interface CategoryProps {
 export function CategoryCard({ category }: CategoryProps) {
   return (
     <div
+      className="group rounded-lg cursor-pointer hover:shadow-md transition-all
+                         duration-300 ease-in-out border-0 bg-[#2c313a]/50 backdrop-blur-sm"
       key={category.id}
-      className="group bg-slate-900 p-5 rounded-lg flex flex-col items-center justify-center cursor-pointer"
     >
-      <SiKingstontechnology
-        size={50}
-        className=" m-2 text-blue-500 bg-slate-800 group-hover:bg-gray-700 p-2 rounded-3xl transition-all"
-      />
-      <h3 className="font-semibold text-lg">{category.name}</h3>
-      {category.count && (
-        <p className="text-sm text-gray-400">{category.count} produtos</p>
-      )}
+      <div className="p-6 text-center">
+        <div className="mb-4 flex justify-center">
+          <div
+            className="rounded-full bg-[#5593f7]/10
+                                     p-4 group-hover:bg-[#5593f7]/20 transition-colors
+                                      duration-300"
+          >
+            <VscExtensions className="text-[#5593f7]" />
+          </div>
+        </div>
+        <h3 className="font-medium text-sm mb-1">{category.name}</h3>
+        <p className="text-xs text-gray-400">{category.count} produtos</p>
+      </div>
     </div>
   );
 }
